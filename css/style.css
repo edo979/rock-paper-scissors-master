@@ -1,1 +1,1 @@
-/*# sourceMappingURL=style.css.map */
+.buttons{position:relative;outline:1px solid red;height:300px;width:300px}.buttons>*{position:absolute}.buttons_btn-left{left:0;top:0}.buttons_btn-right{right:0;top:0}.buttons_btn-bottom{bottom:0;left:50%;transform:translateX(-50%)}/*# sourceMappingURL=style.css.map */

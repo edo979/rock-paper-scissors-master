@@ -1,0 +1,27 @@
+.buttons {
+  position: relative;
+  outline: 1px solid red;
+
+  height: 300px;
+  width: 300px;
+
+  > * {
+    position: absolute;
+  }
+
+  &_btn-left {
+    left: 0;
+    top: 0;
+  }
+
+  &_btn-right {
+    right: 0;
+    top: 0;
+  }
+
+  &_btn-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
