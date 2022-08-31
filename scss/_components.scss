@@ -1,8 +1,8 @@
 .buttons {
   position: relative;
   margin: 2rem;
-  padding: 2rem;
-  width: fit-content;
+  width: 313px;
+  height: 278px;
 
   display: grid;
 
@@ -20,18 +20,30 @@
 
   &_btn-left {
     margin-left: 0;
+    transform: translate(-50%, -50%);
   }
 
   &_btn-right {
-    margin-left: auto;
+    margin-left: 313px - 51px;
+    margin-bottom: 278px - 58px;
+    margin-top: auto;
+    transform: translate(50%, -50%);
+
+    transition: all 1s linear;
   }
 
   &_btn-bottom {
     margin-top: auto;
     margin-inline: auto;
+    transform: translate(0%, 50%);
   }
 
   > .move-to-start {
-    animation: move-to-start 3s;
+    //animation: move-to-start 1s linear forwards;
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    transform: translate(0, 0);
   }
 }
