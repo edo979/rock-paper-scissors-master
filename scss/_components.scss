@@ -1,8 +1,11 @@
 .buttons {
+  --container-w: 313px;
+  --container-h: 278px;
+
   position: relative;
   margin: 2rem;
-  width: 313px;
-  height: 278px;
+  width: var(--container-w);
+  height: var(--container-h);
 
   display: grid;
 
@@ -23,20 +26,29 @@
   }
 
   &_btn-paper {
+    --btn-w: 49px;
+    --btn-h: 59px;
+
     margin-left: 0;
-    margin-bottom: 278px - 58px;
+    margin-bottom: calc(var(--container-h) - var(--btn-h));
     transform: translate(-50%, -50%);
   }
 
   &_btn-scissors {
-    margin-left: 313px - 51px;
-    margin-bottom: 278px - 58px;
+    --btn-w: 51px;
+    --btn-h: 58px;
+
+    margin-left: calc(var(--container-w) - var(--btn-w));
+    margin-bottom: calc(var(--container-h) - var(--btn-h));
     transform: translate(50%, -50%);
   }
 
   &_btn-rock {
+    --btn-w: 48px;
+    --btn-h: 48px;
+
     margin-top: auto;
-    margin-left: (313px - 51px) / 2;
+    margin-left: calc((var(--container-w) - var(--btn-w)) / 2);
     transform: translate(0%, 50%);
   }
 
@@ -54,7 +66,7 @@
   }
 
   > .move-to-house-select {
-    margin-left: 313px - 51px;
+    margin-left: calc(var(--container-w) - var(--btn-w));
     margin-right: 0;
     margin-bottom: 0;
     margin-top: auto;
