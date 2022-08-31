@@ -1,0 +1,12 @@
+@keyframes move-to-start {
+  from {
+    margin-left: 80%;
+  }
+
+  to {
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+}

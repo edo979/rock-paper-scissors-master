@@ -4,10 +4,13 @@
   padding: 2rem;
   width: fit-content;
 
+  display: grid;
+
   outline: 1px solid red;
 
-  > div[class*='_btn-'] {
-    position: absolute;
+  > * {
+    grid-area: 1 / 1 / 1 / 1;
+    place-self: start;
   }
 
   &_bg-image {
@@ -16,18 +19,19 @@
   }
 
   &_btn-left {
-    left: 0;
-    top: 0;
+    margin-left: 0;
   }
 
   &_btn-right {
-    right: 0;
-    top: 0;
+    margin-left: auto;
   }
 
   &_btn-bottom {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: auto;
+    margin-inline: auto;
+  }
+
+  > .move-to-start {
+    animation: move-to-start 3s;
   }
 }
