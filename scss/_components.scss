@@ -58,6 +58,19 @@
     transition: all 1s linear;
   }
 
+  &.selected-visible {
+    > :not([class*='move-to-']) {
+      opacity: 0;
+      transition: opacity 0.5s linear;
+    }
+  }
+
+  &.remove-children-after-transition {
+    > :not([class*='move-to-']) {
+      display: none;
+    }
+  }
+
   > .move-to-user-select {
     margin-left: 0;
     margin-right: auto;
