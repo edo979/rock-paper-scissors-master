@@ -1,0 +1,12 @@
+{
+  "name": "rock-paper-scissors-master",
+  "version": "1.0.0",
+  "description": "rock, paper, scissors game.",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass -s compressed -w scss:css"
+  },
+  "devDependencies": {
+    "sass": "^1.54.7"
+  }
+}
