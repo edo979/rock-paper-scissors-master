@@ -4,5 +4,5 @@ btnEls.addEventListener('click', (e) => {
   /** @type {Element} */
   const el = e.target.closest('[data-btn-icon]')
 
-  el.classList.add('move-to-user-select')
+  el.classList.add('move-to-house-select')
 })
