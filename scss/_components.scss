@@ -13,28 +13,28 @@
     place-self: start;
   }
 
-  > [class*='_btn-'] {
-    //transition: all 1s linear;
-  }
+  // > [class*='_btn-'] {
+  //   //transition: all 1s linear;
+  // }
 
   &_bg-image {
     display: inline-block;
     width: fit-content;
   }
 
-  &_btn-left {
+  &_btn-paper {
     margin-left: 0;
     transform: translate(-50%, -50%);
   }
 
-  &_btn-right {
+  &_btn-scissors {
     margin-left: 313px - 51px;
     margin-bottom: 278px - 58px;
     margin-top: auto;
     transform: translate(50%, -50%);
   }
 
-  &_btn-bottom {
+  &_btn-rock {
     margin-top: auto;
     margin-inline: auto;
     transform: translate(0%, 50%);
