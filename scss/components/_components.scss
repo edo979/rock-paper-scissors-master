@@ -1,1 +1,8 @@
 @use 'game-container';
+
+.main-container {
+  background-image: linear-gradient(
+    hsl(var(--clr-bg-200)),
+    hsl(var(--clr-bg-100))
+  );
+}
