@@ -1,0 +1,21 @@
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+:root {
+  --clr-yellow-400: (39, 89%, 49%);
+  --clr-yellow-500: (40, 84%, 53%);
+  --clr-blue-400: (230, 89%, 62%);
+  --clr-blue-500: (230, 89%, 65%);
+  --clr-red-400: (349, 71%, 52%);
+  --clr-red-500: (349, 70%, 56%);
+
+  --clr-neutral-300: (229, 25%, 31%); // Dark Text
+  --clr-neutral-400: (229, 64%, 46%); // Score Text
+  --clr-neutral-500: (217, 16%, 45%); // Header Outline
+
+  --clr-bg-100: (237, 49%, 15%); // Background
+  --clr-bg-200: (214, 47%, 23%); // Background
+}
+
+//Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+//Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
