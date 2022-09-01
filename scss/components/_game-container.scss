@@ -11,19 +11,6 @@
 
   outline: 1px solid red;
 
-  &.hide-elements {
-    > :not([class*='move-to-']) {
-      opacity: 0;
-      transition: opacity 0.5s linear;
-    }
-  }
-
-  &.remove-children-after-transition {
-    > :not([class*='move-to-']) {
-      display: none;
-    }
-  }
-
   &_bg-image {
     grid-area: 1 / 1 / 1 / 1;
     place-self: center;
@@ -52,7 +39,20 @@
   }
 }
 
-.step-2 {
+.step-2.game-container {
+  &.remove-children-after-transition {
+    > :not([class*='move-to-']) {
+      display: none;
+    }
+  }
+
+  &.hide-elements {
+    > :not([class*='move-to-']) {
+      opacity: 0;
+      transition: opacity 0.5s linear;
+    }
+  }
+
   .game-container_result {
     display: flex;
     top: 60%;
