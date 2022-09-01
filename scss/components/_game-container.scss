@@ -98,14 +98,15 @@
     z-index: -2;
 
     background-image: linear-gradient(
-      hsl(var(--btn-clr-100)),
-      hsl(var(--btn-clr-200))
+      to bottom,
+      hsl(var(--btn-clr-200)),
+      hsl(var(--btn-clr-100))
     );
   }
 
   &-paper {
-    --btn-clr-100: var(--clr-blue-500);
-    --btn-clr-200: var(--clr-blue-400);
+    --btn-clr-200: var(--clr-blue-500);
+    --btn-clr-100: var(--clr-blue-400);
 
     margin-left: 0;
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
@@ -113,8 +114,8 @@
   }
 
   &-scissors {
-    --btn-clr-100: var(--clr-yellow-500);
-    --btn-clr-200: var(--clr-yellow-400);
+    --btn-clr-200: var(--clr-yellow-500);
+    --btn-clr-100: var(--clr-yellow-400);
 
     margin-left: calc(var(--container-w) - var(--btn-radius));
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
@@ -122,8 +123,8 @@
   }
 
   &-rock {
-    --btn-clr-100: var(--clr-red-500);
-    --btn-clr-200: var(--clr-red-400);
+    --btn-clr-200: var(--clr-red-500);
+    --btn-clr-100: var(--clr-red-400);
 
     margin-top: auto;
     margin-left: calc((var(--container-w) - var(--btn-radius)) / 2);
