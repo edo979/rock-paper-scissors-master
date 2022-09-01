@@ -1,27 +1,45 @@
 .buttons {
-  --container-w: 313px;
-  --container-h: 278px;
+  &-container {
+    --container-w: 313px;
+    --container-h: 278px;
 
-  position: relative;
-  margin: 2rem;
-  width: var(--container-w);
-  height: var(--container-h);
+    position: relative;
+    margin: 2rem;
+    width: var(--container-w);
+    height: var(--container-h);
 
-  display: grid;
+    display: grid;
 
-  outline: 1px solid red;
+    outline: 1px solid red;
 
-  > * {
-    grid-area: 1 / 1 / 1 / 1;
-    place-self: start;
+    &.hide-elements {
+      > :not([class*='move-to-']) {
+        opacity: 0;
+        transition: opacity 0.5s linear;
+      }
+    }
+
+    &.remove-children-after-transition {
+      > :not([class*='move-to-']) {
+        display: none;
+      }
+    }
   }
 
   &_bg-image {
+    grid-area: 1 / 1 / 1 / 1;
+    place-self: center;
+
     display: inline-block;
     width: fit-content;
   }
+}
 
-  &_btn-paper {
+.button {
+  grid-area: 1 / 1 / 1 / 1;
+  place-self: start;
+
+  &-paper {
     --btn-w: 49px;
     --btn-h: 59px;
 
@@ -30,7 +48,7 @@
     transform: translate(-50%, -50%);
   }
 
-  &_btn-scissors {
+  &-scissors {
     --btn-w: 51px;
     --btn-h: 58px;
 
@@ -39,7 +57,7 @@
     transform: translate(50%, -50%);
   }
 
-  &_btn-rock {
+  &-rock {
     --btn-w: 48px;
     --btn-h: 48px;
 
@@ -48,33 +66,20 @@
     transform: translate(0%, 50%);
   }
 
-  > *[class*='move-to-'] {
+  &[class*='move-to-'] {
     transform: translate(0, 0);
 
     transition: all 1s linear;
   }
 
-  &.hide-elements {
-    > :not([class*='move-to-']) {
-      opacity: 0;
-      transition: opacity 0.5s linear;
-    }
-  }
-
-  &.remove-children-after-transition {
-    > :not([class*='move-to-']) {
-      display: none;
-    }
-  }
-
-  > .move-to-user-select {
+  &.move-to-user-select {
     margin-left: 0;
     margin-right: auto;
     margin-bottom: 0;
     margin-top: auto;
   }
 
-  > .move-to-house-select {
+  &.move-to-house-select {
     margin-left: calc(var(--container-w) - var(--btn-w));
     margin-right: 0;
     margin-bottom: 0;
