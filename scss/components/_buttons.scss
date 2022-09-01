@@ -16,10 +16,6 @@
     place-self: start;
   }
 
-  // > [class*='_btn-'] {
-  //   //transition: all 1s linear;
-  // }
-
   &_bg-image {
     display: inline-block;
     width: fit-content;
@@ -58,7 +54,7 @@
     transition: all 1s linear;
   }
 
-  &.selected-visible {
+  &.hide-elements {
     > :not([class*='move-to-']) {
       opacity: 0;
       transition: opacity 0.5s linear;

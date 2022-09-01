@@ -6,7 +6,7 @@ btnEls.addEventListener('click', (e) => {
   const el = e.target.closest('[data-btn-icon]')
 
   el.classList.add('move-to-house-select')
-  btnEls.classList.add('selected-visible')
+  btnEls.classList.add('hide-elements')
 })
 
 bgImgEl.addEventListener('transitionend', function (e) {
