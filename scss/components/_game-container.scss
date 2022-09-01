@@ -17,10 +17,12 @@
 
     display: inline-block;
     width: fit-content;
+    z-index: 1;
   }
 
   &_result {
     position: absolute;
+    z-index: 2;
 
     display: flex;
     flex-direction: column;
@@ -61,14 +63,49 @@
 }
 
 .button {
+  --btn-w: 200px;
+  --btn-h: 200px;
+
   grid-area: 1 / 1 / 1 / 1;
   place-self: start;
+  position: relative;
 
-  background-color: white;
+  display: grid;
+  place-items: center;
+  width: var(--btn-w);
+  height: var(--btn-h);
+
+  z-index: 2;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  &::before {
+    width: 150px;
+    height: 150px;
+    z-index: -1;
+
+    background-color: white;
+  }
+
+  &::after {
+    width: 170px;
+    height: 170px;
+    z-index: -2;
+
+    background-image: linear-gradient(
+      hsl(var(--btn-clr-100)),
+      hsl(var(--btn-clr-200))
+    );
+  }
 
   &-paper {
-    --btn-w: 49px;
-    --btn-h: 59px;
+    --btn-clr-100: var(--clr-blue-500);
+    --btn-clr-200: var(--clr-blue-400);
 
     margin-left: 0;
     margin-bottom: calc(var(--container-h) - var(--btn-h));
@@ -76,8 +113,8 @@
   }
 
   &-scissors {
-    --btn-w: 51px;
-    --btn-h: 58px;
+    --btn-clr-100: var(--clr-yellow-500);
+    --btn-clr-200: var(--clr-yellow-400);
 
     margin-left: calc(var(--container-w) - var(--btn-w));
     margin-bottom: calc(var(--container-h) - var(--btn-h));
@@ -85,8 +122,8 @@
   }
 
   &-rock {
-    --btn-w: 48px;
-    --btn-h: 48px;
+    --btn-clr-100: var(--clr-red-500);
+    --btn-clr-200: var(--clr-red-400);
 
     margin-top: auto;
     margin-left: calc((var(--container-w) - var(--btn-w)) / 2);
