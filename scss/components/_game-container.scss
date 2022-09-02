@@ -63,8 +63,9 @@
 }
 
 .button {
-  --btn-radius: 170px;
-  --btn-inner-radius: 130px;
+  --btn-radius: 200px;
+  --btn-inner-radius: 150px;
+  --img-h: 80px;
 
   grid-area: 1 / 1 / 1 / 1;
   place-self: start;
@@ -76,6 +77,10 @@
   height: var(--btn-radius);
 
   z-index: 2;
+
+  img {
+    height: var(--img-h);
+  }
 
   &::before,
   &::after {
@@ -129,6 +134,11 @@
     margin-top: auto;
     margin-left: calc((var(--container-w) - var(--btn-radius)) / 2);
     transform: translate(0%, 40%);
+
+    img {
+      margin-top: 5%;
+      height: calc(var(--img-h) - var(--img-h) / 5.34);
+    }
   }
 
   &[class*='move-to-'] {
