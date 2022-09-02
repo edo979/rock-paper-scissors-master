@@ -1,5 +1,5 @@
 .game-container {
-  --container-w: 450px;
+  --container-w: 313px;
   --container-h: 278px;
 
   position: relative;
@@ -63,8 +63,8 @@
 }
 
 .button {
-  --btn-radius: 130px;
-  --btn-inner-radius: 100px;
+  --btn-radius: 170px;
+  --btn-inner-radius: 130px;
 
   grid-area: 1 / 1 / 1 / 1;
   place-self: start;
@@ -110,7 +110,7 @@
 
     margin-left: 0;
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -40%);
   }
 
   &-scissors {
@@ -119,7 +119,7 @@
 
     margin-left: calc(var(--container-w) - var(--btn-radius));
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
-    transform: translate(50%, -50%);
+    transform: translate(40%, -40%);
   }
 
   &-rock {
@@ -128,7 +128,7 @@
 
     margin-top: auto;
     margin-left: calc((var(--container-w) - var(--btn-radius)) / 2);
-    transform: translate(0%, 50%);
+    transform: translate(0%, 40%);
   }
 
   &[class*='move-to-'] {
