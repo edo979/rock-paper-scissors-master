@@ -2,8 +2,9 @@
   --container-w: 313px;
   --container-h: 278px;
 
+  place-self: center;
+
   position: relative;
-  margin: 1rem 3rem;
   width: var(--container-w);
   height: var(--container-h);
 
@@ -15,8 +16,6 @@
     grid-area: 1 / 1 / 1 / 1;
     place-self: center;
 
-    display: inline-block;
-    width: fit-content;
     z-index: 1;
   }
 
