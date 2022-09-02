@@ -6,3 +6,24 @@
     hsl(var(--clr-bg-100))
   );
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+
+  border-radius: 20px;
+  border: 4px solid blue;
+
+  &_score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0.5rem 2rem;
+
+    background-color: white;
+  }
+}
