@@ -1,5 +1,5 @@
 .game-container {
-  --container-w: 313px;
+  --container-w: 550px;
   --container-h: 278px;
 
   place-self: center;
@@ -10,7 +10,9 @@
 
   display: grid;
 
-  outline: 1px solid red;
+  //outline: 1px solid red;
+
+  transition: width 1s linear;
 
   &_bg-image {
     grid-area: 1 / 1 / 1 / 1;
@@ -114,7 +116,7 @@
 
     margin-left: 0;
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
-    transform: translate(-40%, -40%);
+    transform: translateY(-40%);
   }
 
   &-scissors {
@@ -123,7 +125,7 @@
 
     margin-left: calc(var(--container-w) - var(--btn-radius));
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
-    transform: translate(40%, -40%);
+    transform: translateY(-40%);
   }
 
   &-rock {
@@ -141,7 +143,7 @@
   }
 
   &[class*='move-to-'] {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1.4);
 
     transition: all 1s linear;
   }
