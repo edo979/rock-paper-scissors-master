@@ -25,5 +25,5 @@ bgImgEl.addEventListener('transitionend', function (e) {
   setTimeout(() => {
     gameEl.classList.add('step-3')
     state.userSelectEl.classList.add('radial-bg')
-  }, 2000)
+  }, 1000)
 })

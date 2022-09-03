@@ -107,6 +107,6 @@
   border-radius: 50%;
   box-shadow: 0 0 0 var(--radial-ring) hsl(0, 0%, 100%, 0.0275),
     0 0 0 calc(var(--radial-ring) * 2) hsl(0, 0%, 100%, 0.025),
-    0 0 0 calc(var(--radial-ring) * 3 + var(--radial-ring) / 4)
+    0 0 0 calc(var(--radial-ring) * 3 + var(--radial-ring) / 5)
       hsl(0, 0%, 100%, 0.02);
 }

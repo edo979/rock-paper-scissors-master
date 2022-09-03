@@ -10,7 +10,7 @@
 
   display: grid;
 
-  outline: 1px solid red;
+  //outline: 1px solid red;
 
   &_header {
     // Align text on top of button
@@ -79,7 +79,7 @@
 }
 
 .step-3.game-container {
-  --container-w: 700px;
+  --container-w: 850px;
 
   transition: width 1s linear;
 
