@@ -10,9 +10,28 @@
 
   display: grid;
 
-  //outline: 1px solid red;
+  outline: 1px solid red;
 
   transition: width 1s linear;
+
+  &_header {
+    // Align text on top of button
+    --m-start: 4rem;
+    --m-end: 3rem;
+
+    grid-area: 1 / 1 / 1 / 1;
+    z-index: 1;
+
+    justify-content: space-between;
+    margin-inline-start: var(--m-start);
+    margin-inline-end: var(--m-end);
+
+    color: white;
+
+    opacity: 0;
+
+    transition: opacity 1s ease-in 1s;
+  }
 
   &_bg-image {
     grid-area: 1 / 1 / 1 / 1;
@@ -54,6 +73,11 @@
       opacity: 0;
       transition: opacity 0.5s linear;
     }
+  }
+
+  .game-container_header {
+    display: flex;
+    opacity: 1;
   }
 
   .game-container_result {
