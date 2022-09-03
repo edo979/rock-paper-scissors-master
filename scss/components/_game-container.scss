@@ -12,8 +12,6 @@
 
   outline: 1px solid red;
 
-  transition: width 1s linear;
-
   &_header {
     // Align text on top of button
     --m-start: 4rem;
@@ -29,8 +27,6 @@
     color: white;
 
     opacity: 0;
-
-    transition: opacity 1s ease-in 1s;
   }
 
   &_bg-image {
@@ -55,8 +51,6 @@
 
     opacity: 0;
 
-    transition: opacity 0.5s ease-in 1.5s;
-
     outline: 1px solid blue;
   }
 }
@@ -65,16 +59,23 @@
   .button:not([class*='move-to-']),
   .game-container_bg-image {
     opacity: 0;
+
     transition: opacity 0.5s linear;
   }
 
   .game-container_header {
     display: flex;
     opacity: 1;
+
+    transition: opacity 1s ease-in 0.5s;
   }
 }
 
 .step-3.game-container {
+  --container-w: 700px;
+
+  transition: width 1s linear;
+
   > :not([class*='move-to-']) {
     display: none;
   }
@@ -83,6 +84,8 @@
     display: flex;
     top: 60%;
     opacity: 1;
+
+    transition: opacity 0.5s ease-in 1.5s;
   }
 }
 
@@ -165,10 +168,17 @@
     }
   }
 
+  // Radial background
+  &.radial-bg {
+    border-radius: 50%;
+    box-shadow: 0 0 5px 10px white;
+  }
+
+  // New position after pik
   &[class*='move-to-'] {
     transform: translate(0, 0) scale(1.4);
 
-    transition: all 1s linear;
+    transition: margin 1s linear, transform 1s linear, box-shadow 1s ease-out 1s;
   }
 
   &.move-to-user-select {

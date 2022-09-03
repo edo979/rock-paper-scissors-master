@@ -1,9 +1,13 @@
 const gameEl = document.getElementById('game-container'),
-  bgImgEl = document.getElementById('bg-image')
+  bgImgEl = document.getElementById('bg-image'),
+  state = {
+    userSelectEl: undefined,
+  }
 
 gameEl.addEventListener('click', (e) => {
   /** @type {Element} */
   const el = e.target.closest('[data-btn-icon]')
+  state.userSelectEl = el
 
   // Add class to user selecet
   el.classList.add('move-to-user-select')
@@ -18,5 +22,8 @@ gameEl.addEventListener('click', (e) => {
 })
 
 bgImgEl.addEventListener('transitionend', function (e) {
-  gameEl.classList.add('step-3')
+  setTimeout(() => {
+    gameEl.classList.add('step-3')
+    state.userSelectEl.classList.add('radial-bg')
+  }, 2000)
 })
