@@ -19,3 +19,13 @@
 
 //Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
 //Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+// UTILITY
+.text-long {
+  letter-spacing: 2px;
+}
