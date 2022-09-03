@@ -1,0 +1,106 @@
+.button {
+  --btn-radius: 200px;
+  --btn-inner-radius: 150px;
+  --img-h: 80px;
+
+  grid-area: 1 / 1 / 1 / 1;
+  place-self: start;
+  position: relative;
+
+  display: grid;
+  place-items: center;
+  width: var(--btn-radius);
+  height: var(--btn-radius);
+
+  z-index: 2;
+
+  img {
+    height: var(--img-h);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  &::before {
+    width: var(--btn-inner-radius, 150px);
+    height: var(--btn-inner-radius, 150px);
+    z-index: -1;
+
+    background-color: white;
+  }
+
+  &::after {
+    width: var(--btn-radius, 180px);
+    height: var(--btn-radius, 180px);
+    z-index: -2;
+
+    background-image: linear-gradient(
+      to bottom,
+      hsl(var(--btn-clr-200)),
+      hsl(var(--btn-clr-100))
+    );
+  }
+
+  &-paper {
+    --btn-clr-200: var(--clr-blue-500);
+    --btn-clr-100: var(--clr-blue-400);
+
+    margin-left: 0;
+    margin-bottom: calc(var(--container-h) - var(--btn-radius));
+    transform: translateY(-40%);
+  }
+
+  &-scissors {
+    --btn-clr-200: var(--clr-yellow-500);
+    --btn-clr-100: var(--clr-yellow-400);
+
+    margin-left: calc(var(--container-w) - var(--btn-radius));
+    margin-bottom: calc(var(--container-h) - var(--btn-radius));
+    transform: translateY(-40%);
+  }
+
+  &-rock {
+    --btn-clr-200: var(--clr-red-500);
+    --btn-clr-100: var(--clr-red-400);
+
+    margin-top: auto;
+    margin-left: calc((var(--container-w) - var(--btn-radius)) / 2);
+    transform: translate(0%, 40%);
+
+    img {
+      margin-top: 5%;
+      height: calc(var(--img-h) - var(--img-h) / 5.34);
+    }
+  }
+
+  // Transition, scale, translate
+  &[class*='move-to-'] {
+    transform: translate(0, 0) scale(1.4);
+
+    transition: margin 1s linear, transform 1s linear, box-shadow 1s ease-out 1s;
+  }
+
+  // New position after pik
+  &.move-to-user-select {
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-top: auto;
+  }
+
+  &.move-to-house-select {
+    margin-left: calc(var(--container-w) - var(--btn-radius));
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: auto;
+  }
+}
+
+.radial-bg {
+  border-radius: 50%;
+  box-shadow: 0 0 5px 10px white;
+}
