@@ -13,13 +13,10 @@ gameEl.addEventListener('click', (e) => {
     .querySelector('[data-btn-icon="rock"]')
     .classList.add('move-to-house-select')
 
-  // Hide elements
-  gameEl.classList.add('hide-elements')
-
   // Move to step 2
   gameEl.classList.add('step-2')
 })
 
 bgImgEl.addEventListener('transitionend', function (e) {
-  gameEl.classList.add('remove-children-after-transition')
+  gameEl.classList.add('step-3')
 })

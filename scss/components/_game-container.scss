@@ -62,22 +62,21 @@
 }
 
 .step-2.game-container {
-  &.remove-children-after-transition {
-    > :not([class*='move-to-']) {
-      display: none;
-    }
-  }
-
-  &.hide-elements {
-    > :not([class*='move-to-']) {
-      opacity: 0;
-      transition: opacity 0.5s linear;
-    }
+  .button:not([class*='move-to-']),
+  .game-container_bg-image {
+    opacity: 0;
+    transition: opacity 0.5s linear;
   }
 
   .game-container_header {
     display: flex;
     opacity: 1;
+  }
+}
+
+.step-3.game-container {
+  > :not([class*='move-to-']) {
+    display: none;
   }
 
   .game-container_result {
