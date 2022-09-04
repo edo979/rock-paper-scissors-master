@@ -8,6 +8,7 @@
   }
 
   .main-container {
+    grid-template-rows: auto 400px 1fr;
     width: max(375px, 100%);
     padding: 25px;
     overflow: hidden;
@@ -31,7 +32,13 @@
 
   .game-container {
     --container-w: max(325px, 100%);
-    --container-h: 278px;
+    --container-h: 190px;
+
+    &_bg-image {
+      svg {
+        stroke-width: 22;
+      }
+    }
   }
 
   .button {

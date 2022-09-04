@@ -10,7 +10,7 @@
 
   display: grid;
 
-  //outline: 1px solid red;
+  outline: 1px solid red;
 
   &_header {
     // Align text on top of button
@@ -34,9 +34,14 @@
 
   &_bg-image {
     grid-area: 1 / 1 / 1 / 1;
-    place-self: center;
 
     z-index: 1;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke-width: 15;
+    }
   }
 
   &_result {
