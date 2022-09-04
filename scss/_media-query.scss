@@ -2,7 +2,6 @@
   :root {
     --fs-400: 0.625rem;
     --fs-500: 0.9rem;
-    --fs-800: 2rem;
     --fs-900: 2.5rem;
 
     --b-radius: 7px;
@@ -10,7 +9,7 @@
 
   // Layout
   .main-container {
-    grid-template-rows: auto 400px 1fr;
+    grid-template-rows: auto 500px 1fr;
     width: max(375px, 100%);
     padding: 25px;
     overflow: hidden;
@@ -45,6 +44,27 @@
         stroke-width: 22;
       }
     }
+
+    &_header {
+      --m-start: 1.5rem;
+      --m-end: -1rem;
+      margin-top: 100px;
+    }
+
+    &_result {
+      grid-area: 1 / 1;
+      justify-self: center;
+      align-self: end;
+
+      position: static;
+      transform: translate(0);
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .btn {
+    --fs-400: 1rem;
   }
 
   .attribution {
@@ -79,31 +99,16 @@
     }
   }
 
+  // Game states
   .step-3.game-container {
     --container-w: 100%;
-    align-self: stretch;
-    height: auto;
+    --container-h: 320px;
 
     > :not([class*='move-to-']) {
       display: none;
     }
 
-    .game-container_header {
-      --m-start: 1.5rem;
-      --m-end: -1rem;
-      margin-top: 110px;
-    }
-
     .game-container_result {
-      grid-area: 1 / 1;
-      justify-self: center;
-      align-self: end;
-
-      position: static;
-      transform: translate(0);
-      left: 0;
-      top: 0;
-
       opacity: 1;
 
       transition: opacity 0.5s ease-in 1.5s;
