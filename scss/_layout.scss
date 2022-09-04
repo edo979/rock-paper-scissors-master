@@ -1,7 +1,6 @@
 .main-container {
   display: grid;
   grid-template-rows: auto 500px 1fr;
-  justify-content: center;
   justify-items: center;
 
   min-height: 100%;
@@ -10,4 +9,9 @@
 
 .attribution {
   align-self: end;
+}
+
+.btn-outline {
+  justify-self: end;
+  margin-right: 2rem;
 }
