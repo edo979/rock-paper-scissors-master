@@ -1,0 +1,41 @@
+@media (max-width: 50em) {
+  :root {
+    --fs-400: 0.85rem;
+    --fs-800: 3.35rem;
+    --fs-900: 2.7rem;
+
+    --b-radius: 10px;
+  }
+
+  .main-container {
+    width: max(375px, 100%);
+    padding: 25px;
+    overflow: hidden;
+  }
+
+  .header {
+    width: min(100%, 700px);
+    height: 100px;
+    padding-inline: 1rem;
+
+    &_logo {
+      width: 85px;
+    }
+
+    &_score {
+      padding: 0.5rem 1rem;
+      line-height: 1;
+    }
+  }
+
+  .game-container {
+    --container-w: max(325px, 100%);
+    --container-h: 278px;
+  }
+
+  .button {
+    --btn-radius: 130px;
+    --btn-inner-radius: 100px;
+    --img-h: 50px;
+  }
+}
