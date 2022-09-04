@@ -1,10 +1,10 @@
 @media (max-width: 50em) {
   :root {
-    --fs-400: 0.85rem;
+    --fs-400: 0.625rem;
     --fs-800: 3.35rem;
-    --fs-900: 2.7rem;
+    --fs-900: 2.5rem;
 
-    --b-radius: 10px;
+    --b-radius: 7px;
   }
 
   .main-container {
@@ -16,14 +16,15 @@
   .header {
     width: min(100%, 700px);
     height: 100px;
-    padding-inline: 1rem;
+    padding-inline: 0.9rem;
+    border: 3px solid hsl(var(--clr-neutral-500));
 
     &_logo {
       width: 85px;
     }
 
     &_score {
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.25rem;
       line-height: 1;
     }
   }
