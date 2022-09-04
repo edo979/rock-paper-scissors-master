@@ -33,6 +33,8 @@
   .game-container {
     --container-w: max(325px, 100%);
     --container-h: 190px;
+    align-self: start;
+    margin-top: 150px;
 
     &_bg-image {
       svg {
@@ -45,5 +47,9 @@
     --btn-radius: 130px;
     --btn-inner-radius: 100px;
     --img-h: 50px;
+  }
+
+  .attribution {
+    place-self: end;
   }
 }
