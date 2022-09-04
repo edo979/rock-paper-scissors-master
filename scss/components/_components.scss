@@ -50,7 +50,7 @@
 .btn {
   text-transform: uppercase;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--b-radius);
 
   font-size: var(--fs-400);
   font-weight: 700;
@@ -60,5 +60,13 @@
     width: 100%;
     padding: 0.8rem;
     color: hsl(var(--clr-neutral-300));
+  }
+
+  &-outline {
+    border: 2px solid hsl(0, 0, 100, 0.5);
+    padding: 0.35rem 2rem;
+
+    color: white;
+    background-color: transparent;
   }
 }

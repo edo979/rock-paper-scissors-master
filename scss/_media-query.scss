@@ -9,7 +9,7 @@
 
   // Layout
   .main-container {
-    grid-template-rows: auto 500px 1fr;
+    grid-template-rows: auto 470px auto 1fr;
     width: max(375px, 100%);
     padding: 25px;
     overflow: hidden;
@@ -63,8 +63,9 @@
     }
   }
 
-  .attribution {
-    align-self: end;
+  .btn-outline {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 
   // Components
@@ -107,7 +108,7 @@
   // Game states
   .step-3.game-container {
     --container-w: 100%;
-    --container-h: 320px;
+    --container-h: calc(100% - 150px);
 
     > :not([class*='move-to-']) {
       display: none;
