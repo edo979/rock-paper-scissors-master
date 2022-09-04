@@ -63,12 +63,17 @@
     }
   }
 
+  .attribution {
+    align-self: end;
+  }
+
+  // Components
   .btn {
     --fs-400: 1rem;
   }
 
-  .attribution {
-    align-self: end;
+  .radial-bg {
+    --radial-ring: 25px;
   }
 
   // Position of buttons
@@ -109,9 +114,7 @@
     }
 
     .game-container_result {
-      opacity: 1;
-
-      transition: opacity 0.5s ease-in 1.5s;
+      transition: opacity 0.5s ease-in 1s;
     }
   }
 }
