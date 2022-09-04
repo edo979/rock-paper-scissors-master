@@ -2,6 +2,7 @@
   --btn-radius: 200px;
   --btn-inner-radius: 150px;
   --img-h: 80px;
+  --y-translate: 40%;
 
   grid-area: 1 / 1 / 1 / 1;
   place-self: start;
@@ -51,7 +52,7 @@
 
     margin-left: 0;
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
-    transform: translateY(-40%);
+    transform: translateY(calc(var(--y-translate) * -1));
   }
 
   &-scissors {
@@ -60,7 +61,7 @@
 
     margin-left: calc(var(--container-w) - var(--btn-radius));
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
-    transform: translateY(-40%);
+    transform: translateY(calc(var(--y-translate) * -1));
   }
 
   &-rock {
@@ -69,7 +70,7 @@
 
     margin-top: auto;
     margin-left: calc((var(--container-w) - var(--btn-radius)) / 2);
-    transform: translate(0%, 40%);
+    transform: translate(0%, var(--y-translate));
 
     img {
       margin-top: 5%;

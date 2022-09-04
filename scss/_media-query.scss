@@ -1,17 +1,21 @@
 @media (max-width: 50em) {
   :root {
     --fs-400: 0.625rem;
-    --fs-800: 3.35rem;
+    --fs-500: 0.9rem;
+    --fs-800: 2rem;
     --fs-900: 2.5rem;
 
     --b-radius: 7px;
   }
 
+  // Layout
   .main-container {
     grid-template-rows: auto 400px 1fr;
     width: max(375px, 100%);
     padding: 25px;
     overflow: hidden;
+    justify-content: stretch;
+    //align-content: start;
   }
 
   .header {
@@ -31,7 +35,7 @@
   }
 
   .game-container {
-    --container-w: max(325px, 100%);
+    --container-w: 100%;
     --container-h: 190px;
     align-self: start;
     margin-top: 150px;
@@ -43,13 +47,58 @@
     }
   }
 
+  .attribution {
+    align-self: end;
+  }
+
+  // Position of buttons
   .button {
     --btn-radius: 130px;
     --btn-inner-radius: 100px;
     --img-h: 50px;
+
+    &.move-to-user-select {
+      margin-left: 0;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+
+    &.move-to-house-select {
+      margin-left: calc(var(--container-w) - var(--btn-radius));
+      margin-right: 0;
+      margin-bottom: auto;
+      margin-top: 0;
+    }
+
+    &[class*='move-to-'] {
+      transform: translate(0, calc(var(--y-translate) * -1)) scale(1);
+
+      transition: margin 1s linear, transform 1s linear,
+        box-shadow 1s ease-out 1s;
+    }
   }
 
-  .attribution {
-    place-self: end;
+  .step-3.game-container {
+    --container-w: 100%;
+
+    grid-template-rows: auto 1fr;
+
+    > :not([class*='move-to-']) {
+      display: none;
+    }
+
+    .game-container_result {
+      justify-self: center;
+
+      position: relative;
+      transform: translate(0);
+      left: 0;
+      top: 0;
+
+      opacity: 1;
+
+      transition: opacity 0.5s ease-in 1.5s;
+    }
   }
 }
