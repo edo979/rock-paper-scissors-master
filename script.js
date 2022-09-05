@@ -11,6 +11,7 @@ const gameEl = document.getElementById('game-container'),
     score: 0,
   }
 
+// event listeners
 gameEl.addEventListener('click', (e) => {
   /** @type {Element} */
   state.userPick = e.target.closest('[data-btn-icon]').dataset.btnIcon
@@ -35,17 +36,10 @@ gameEl.addEventListener('click', (e) => {
 
 bgImgEl.addEventListener('transitionend', function (e) {
   setTimeout(() => {
+    // move to step-3
     gameEl.classList.add('step-3')
 
-    let winerEl = undefined
-
-    if (state.isUserWiner) {
-      winerEl = gameEl.querySelector(`[data-btn-icon="${state.userPick}"]`)
-    } else {
-      winerEl = gameEl.querySelector(`[data-btn-icon="${state.housePick}"]`)
-    }
-
-    winerEl.classList.add('radial-bg')
+    addClassToWinerElement()
   }, 1000)
 })
 
@@ -81,4 +75,16 @@ function getIsUserWiner() {
     default:
       return false
   }
+}
+
+function addClassToWinerElement() {
+  let winerEl = undefined
+
+  if (state.isUserWiner) {
+    winerEl = gameEl.querySelector(`[data-btn-icon="${state.userPick}"]`)
+  } else {
+    winerEl = gameEl.querySelector(`[data-btn-icon="${state.housePick}"]`)
+  }
+
+  winerEl.classList.add('radial-bg')
 }
