@@ -42,6 +42,7 @@ bgImgEl.addEventListener('transitionend', function (e) {
     gameEl.classList.add('step-3')
 
     addClassToWinerElement()
+    updateScore()
   }, 1000)
 })
 
@@ -89,4 +90,16 @@ function addClassToWinerElement() {
   }
 
   winerEl.classList.add('radial-bg')
+}
+
+function updateScore() {
+  const scoreEl = document.getElementById('score')
+
+  if (state.isUserWiner) {
+    state.score++
+  } else {
+    state.score--
+  }
+
+  scoreEl.innerText = state.score
 }
