@@ -30,10 +30,12 @@ gameEl.addEventListener('click', (e) => {
   // Winer is...
   state.isUserWiner = getIsUserWiner()
 
-  // // Move to step 2
+  // Move to step 2
   gameEl.classList.add('step-2')
 })
 
+// wait transition of step-2 to end
+// then move to step-3
 bgImgEl.addEventListener('transitionend', function (e) {
   setTimeout(() => {
     // move to step-3
