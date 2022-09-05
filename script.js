@@ -44,6 +44,7 @@ bgImgEl.addEventListener('transitionend', function (e) {
 
     addClassToWinerElement()
     updateScore()
+    setWinnerMsg()
   }, 1000)
 })
 
@@ -118,4 +119,17 @@ function updateScore() {
   }
 
   scoreEl.innerText = state.score
+}
+
+function setWinnerMsg() {
+  const winnerMsgEl = document.getElementById('winMsg')
+  let msg = ''
+
+  if (state.isUserWiner) {
+    msg = 'You Win'
+  } else {
+    msg = 'You Lose'
+  }
+
+  winnerMsgEl.innerText = msg
 }
