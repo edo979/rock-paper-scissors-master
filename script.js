@@ -14,8 +14,17 @@ const gameEl = document.getElementById('game-container'),
 
 // event listeners
 gameEl.addEventListener('click', (e) => {
-  /** @type {Element} */
-  state.userPick = e.target.closest('[data-btn-icon]').dataset.btnIcon
+  const el = e.target.closest('[data-btn-icon]')
+
+  if (el === null) {
+    return
+  }
+  // is game finsh (step-3)
+  if (state.userPick !== undefined && state.housePick !== undefined) {
+    return
+  }
+
+  state.userPick = el.dataset.btnIcon
   state.housePick = getHousePick()
 
   // Add class to user selecet
@@ -61,6 +70,9 @@ playAgainBtn.addEventListener('click', (e) => {
         'radial-bg'
       )
     )
+
+  state.userPick = undefined
+  state.housePick = undefined
 })
 
 function getHousePick() {
