@@ -1,5 +1,6 @@
 const gameEl = document.getElementById('game-container'),
   bgImgEl = document.getElementById('bg-image'),
+  playAgainBtn = document.getElementById('playAgain'),
   state = {
     PAPPER: 'paper',
     ROCK: 'rock',
@@ -44,6 +45,21 @@ bgImgEl.addEventListener('transitionend', function (e) {
     addClassToWinerElement()
     updateScore()
   }, 1000)
+})
+
+// Play Again
+playAgainBtn.addEventListener('click', (e) => {
+  // Reset game
+  gameEl.classList.remove('step-2', 'step-3')
+  gameEl
+    .querySelectorAll('.button')
+    .forEach((el) =>
+      el.classList.remove(
+        'move-to-user-select',
+        'move-to-house-select',
+        'radial-bg'
+      )
+    )
 })
 
 function getHousePick() {
