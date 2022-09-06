@@ -1,6 +1,7 @@
 .button {
   --btn-radius: 200px;
   --btn-inner-radius: 150px;
+  --btn-shadow: 8px;
   --img-h: 80px;
   --y-translate: 40%;
 
@@ -32,6 +33,7 @@
     z-index: -1;
 
     background-color: white;
+    box-shadow: inset 0 var(--btn-shadow) 0 hsl(var(--clr-blue-400), 0.2);
   }
 
   &::after {
@@ -53,6 +55,10 @@
     margin-left: 0;
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
     transform: translateY(calc(var(--y-translate) * -1));
+
+    &::after {
+      box-shadow: 0 var(--btn-shadow) 0 hsl(var(--clr-blue-600));
+    }
   }
 
   &-scissors {
@@ -62,6 +68,10 @@
     margin-left: calc(var(--container-w) - var(--btn-radius));
     margin-bottom: calc(var(--container-h) - var(--btn-radius));
     transform: translateY(calc(var(--y-translate) * -1));
+
+    &::after {
+      box-shadow: 0 var(--btn-shadow) 0 hsl(var(--clr-yellow-600));
+    }
   }
 
   &-rock {
@@ -71,6 +81,10 @@
     margin-top: auto;
     margin-left: calc((var(--container-w) - var(--btn-radius)) / 2);
     transform: translate(0%, var(--y-translate));
+
+    &::after {
+      box-shadow: 0 var(--btn-shadow) 0 hsl(var(--clr-red-600));
+    }
 
     img {
       margin-top: 5%;
@@ -104,7 +118,6 @@
 .radial-bg {
   --radial-ring: 45px;
 
-  overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 0 var(--radial-ring) hsl(0, 0%, 100%, 0.05),
     0 0 0 calc(var(--radial-ring) * 2) hsl(0, 0%, 100%, 0.03),
