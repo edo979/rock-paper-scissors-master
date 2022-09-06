@@ -12,6 +12,16 @@ const gameEl = document.getElementById('game-container'),
     score: 0,
   }
 
+// Check for score in LS
+;(function () {
+  const score = localStorage.getItem('rpsa_score')
+
+  if (score) {
+    state.score = score
+    updateScore(score)
+  }
+})()
+
 // event listeners
 gameEl.addEventListener('click', (e) => {
   const el = e.target.closest('[data-btn-icon]')
@@ -46,6 +56,7 @@ gameEl.addEventListener('click', (e) => {
 
 // wait transition of step-2 to end
 // then move to step-3
+// save to LS
 bgImgEl.addEventListener('transitionend', function (e) {
   setTimeout(() => {
     // move to step-3
@@ -54,6 +65,7 @@ bgImgEl.addEventListener('transitionend', function (e) {
     addClassToWinerElement()
     updateScore()
     setWinnerMsg()
+    saveToLS()
   }, 1000)
 })
 
@@ -121,8 +133,14 @@ function addClassToWinerElement() {
   winerEl.classList.add('radial-bg')
 }
 
-function updateScore() {
+function updateScore(score) {
   const scoreEl = document.getElementById('score')
+
+  // update on first load from LS
+  if (score) {
+    scoreEl.innerText = score
+    return
+  }
 
   if (state.isUserWiner) {
     state.score++
@@ -144,4 +162,8 @@ function setWinnerMsg() {
   }
 
   winnerMsgEl.innerText = msg
+}
+
+function saveToLS() {
+  localStorage.setItem('rpsa_score', state.score)
 }
