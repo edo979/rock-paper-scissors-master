@@ -1,6 +1,6 @@
 .main-container {
   display: grid;
-  grid-template-rows: auto 500px 1fr;
+  grid-template-rows: auto 500px auto 1fr;
   justify-items: center;
 
   min-height: 100%;

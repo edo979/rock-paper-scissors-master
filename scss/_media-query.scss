@@ -1,4 +1,4 @@
-@media (max-width: 50em) {
+@media (max-width: 52em) {
   :root {
     --fs-400: 0.625rem;
     --fs-500: 0.9rem;
@@ -78,7 +78,7 @@
     --radial-ring: 25px;
   }
 
-  // Position of buttons
+  // Position of buttons, transitions
   .button {
     --btn-radius: 130px;
     --btn-inner-radius: 100px;
@@ -100,9 +100,6 @@
 
     &[class*='move-to-'] {
       transform: translate(0, calc(var(--y-translate) * -1)) scale(1);
-
-      transition: margin 1s linear, transform 1s linear,
-        box-shadow 1s ease-out 1s;
     }
   }
 

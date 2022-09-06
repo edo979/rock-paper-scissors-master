@@ -1,6 +1,7 @@
 .game-container {
-  --container-w: 550px;
-  --container-h: 278px;
+  --container-w: 480px;
+  --container-h: 260px;
+
   grid-area: 2 / 1 / 3 / 1;
 
   place-self: center;
@@ -8,6 +9,7 @@
   position: relative;
   width: var(--container-w);
   height: var(--container-h);
+  margin-top: 50px;
 
   display: grid;
 
@@ -35,13 +37,14 @@
 
   &_bg-image {
     grid-area: 1 / 1 / 1 / 1;
+    justify-self: center;
 
     z-index: 1;
 
     svg {
-      width: 100%;
+      //width: 100%;
       height: 100%;
-      stroke-width: 15;
+      stroke-width: 16;
     }
   }
 

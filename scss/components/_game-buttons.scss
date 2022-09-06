@@ -78,11 +78,11 @@
     }
   }
 
-  // Transition, scale, translate
+  // Transition, scale, translate, box shadow fro radial-bg
   &[class*='move-to-'] {
     transform: translate(0, 0) scale(1.4);
 
-    transition: margin 1s linear, transform 1s linear, box-shadow 1s ease-out 1s;
+    transition: margin 1s linear, transform 1s linear, box-shadow 1s ease-out;
   }
 
   // New position after pik
