@@ -10,11 +10,10 @@
   // Layout
   .main-container {
     grid-template-rows: auto 470px auto 1fr;
-    width: max(375px, 100%);
+    width: 375px;
+    margin-inline: auto;
     padding: 25px;
-    overflow: hidden;
     justify-content: stretch;
-    //align-content: start;
   }
 
   .header {

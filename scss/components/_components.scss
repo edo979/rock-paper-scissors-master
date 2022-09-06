@@ -1,7 +1,7 @@
 @use 'game-container';
 @use 'game-buttons';
 
-.main-container {
+body {
   background-image: radial-gradient(
     circle at top center,
     hsl(var(--clr-bg-200)),
