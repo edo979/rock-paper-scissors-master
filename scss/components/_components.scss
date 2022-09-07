@@ -1,12 +1,21 @@
 @use 'game-container';
 @use 'game-buttons';
 
+body,
+html {
+  height: max-content;
+}
+
 body {
   background-image: radial-gradient(
     circle at top center,
     hsl(var(--clr-bg-200)),
     hsl(var(--clr-bg-100))
   );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 
 .header {
