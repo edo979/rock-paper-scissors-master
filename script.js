@@ -1,6 +1,5 @@
 const gameEl = document.getElementById('game-container'),
   bgImgEl = document.getElementById('bg-image'),
-  playAgainBtn = document.getElementById('playAgain'),
   rulesBtn = document.getElementById('game-rules'),
   modalEl = document.getElementById('modal'),
   closeModalBtn = document.getElementById('modal-close'),
@@ -27,11 +26,18 @@ const gameEl = document.getElementById('game-container'),
 
 // event listeners
 gameEl.addEventListener('click', (e) => {
+  if (e.target.id === 'play-again') {
+    playAgain()
+    return
+  }
+
+  // Get button element
   const el = e.target.closest('[data-btn-icon]')
 
   if (el === null) {
     return
   }
+
   // is game finsh (step-3)
   if (state.userPick !== undefined && state.housePick !== undefined) {
     return
@@ -72,9 +78,12 @@ bgImgEl.addEventListener('transitionend', function (e) {
   }, 1000)
 })
 
-// Play Again
-playAgainBtn.addEventListener('click', (e) => {
-  // Reset game
+rulesBtn.addEventListener('click', (e) => modalEl.classList.add('show'))
+
+closeModalBtn.addEventListener('click', (e) => modalEl.classList.remove('show'))
+
+// Play new game
+function playAgain() {
   gameEl.classList.remove('step-2', 'step-3')
   gameEl
     .querySelectorAll('.button')
@@ -88,11 +97,7 @@ playAgainBtn.addEventListener('click', (e) => {
 
   state.userPick = undefined
   state.housePick = undefined
-})
-
-rulesBtn.addEventListener('click', (e) => modalEl.classList.add('show'))
-
-closeModalBtn.addEventListener('click', (e) => modalEl.classList.remove('show'))
+}
 
 function getHousePick() {
   const availablePicks = state.picks.filter((pik) => pik !== state.userPick)
