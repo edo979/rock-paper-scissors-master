@@ -86,13 +86,18 @@ body {
 }
 
 .modal {
+  display: none;
+
   position: fixed;
   inset: 0;
   z-index: 5;
-  display: grid;
   place-content: center;
 
   background-color: hsl(0, 0%, 0%, 0.5);
+
+  &.show {
+    display: grid;
+  }
 
   &_content {
     padding: 2rem;

@@ -1,6 +1,9 @@
 const gameEl = document.getElementById('game-container'),
   bgImgEl = document.getElementById('bg-image'),
   playAgainBtn = document.getElementById('playAgain'),
+  rulesBtn = document.getElementById('game-rules'),
+  modalEl = document.getElementById('modal'),
+  closeModalBtn = document.getElementById('modal-close'),
   state = {
     PAPPER: 'paper',
     ROCK: 'rock',
@@ -86,6 +89,10 @@ playAgainBtn.addEventListener('click', (e) => {
   state.userPick = undefined
   state.housePick = undefined
 })
+
+rulesBtn.addEventListener('click', (e) => modalEl.classList.add('show'))
+
+closeModalBtn.addEventListener('click', (e) => modalEl.classList.remove('show'))
 
 function getHousePick() {
   const availablePicks = state.picks.filter((pik) => pik !== state.userPick)
